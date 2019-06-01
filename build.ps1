@@ -22,7 +22,7 @@ if ($Bootstrap.IsPresent) {
         Install-module -Name PSDepend -Repository PSGallery
     }
     Import-Module -Name PSDepend -Verbose:$false
-    Invoke-PSDepend -Path './requirements.psd1' -Install -Import -Force -WarningAction SilentlyContinue
+    Invoke-PSDepend -Path k'./requirements.psd1' -Install -Import -Force -WarningAction SilentlyContinue
 }
 
 # Execute psake task(s)

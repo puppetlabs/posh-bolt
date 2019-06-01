@@ -1,4 +1,4 @@
-# bolt-helpers
+# posh-bolt
 
 PowerShell helper commands for interacting with Puppet Bolt
 

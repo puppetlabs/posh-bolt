@@ -5,20 +5,21 @@ online version: https://puppet.com/products/bolt
 schema: 2.0.0
 ---
 
-# New-BoltMetadata
+# Get-BoltModule
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Get all modules available to Puppet Bolt
 
 ## SYNTAX
 
 ```
-New-BoltMetadata [-Path] <String[]> [[-SensitiveParam] <String[]>] [-IncludeCommonParameters]
- [<CommonParameters>]
+Get-BoltModule [[-ModulePath] <String>] [[-BoltDir] <String>] [[-ConfigFile] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+This function will list all available modules to bolt.
+Puppet Bolt is an agentless automation solution for running ad-hoc
+tasks and operations on remote targets
 
 ## EXAMPLES
 
@@ -31,48 +32,48 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -IncludeCommonParameters
-{{ Fill IncludeCommonParameters Description }}
+### -ModulePath
+Directories containing modules, separated by ';'
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Path
-{{ Fill Path Description }}
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -SensitiveParam
-{{ Fill SensitiveParam Description }}
-
-```yaml
-Type: String[]
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -BoltDir
+Specify what Boltdir to load config from (default: autodiscovered from current working dir)
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ConfigFile
+Specify where to load config from (default: ~/.puppetlabs/bolt/bolt.yaml)
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -81,11 +82,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String[]
-
 ## OUTPUTS
 
-### System.Object
 ## NOTES
 
 ## RELATED LINKS
+
+[https://puppet.com/products/bolt](https://puppet.com/products/bolt)
+
