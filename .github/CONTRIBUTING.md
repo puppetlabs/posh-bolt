@@ -1,6 +1,6 @@
 # How to contribute
 
-Contributions to bolt-helpers are highly encouraged and desired.
+Contributions to posh-bolt are highly encouraged and desired.
 Below are some guidelines that will help make the process as smooth as possible.
 
 ## Getting Started
@@ -13,7 +13,7 @@ Below are some guidelines that will help make the process as smooth as possible.
 
 ## Suggesting Enhancements
 
-I want to know what you think is missing from bolt-helpers and how it can be made better.
+I want to know what you think is missing from posh-bolt and how it can be made better.
 
 - When submitting an issue for an enhancement, please be as clear as possible about why you think the enhancement is needed and what the benefit of it would be.
 
