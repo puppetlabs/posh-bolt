@@ -7,4 +7,4 @@ properties {
 
 task default
 
-task Build -FromModule PowerShellBuild -Version '0.3.0'
+task StageFiles -FromModule PowerShellBuild -Version '0.3.0'
