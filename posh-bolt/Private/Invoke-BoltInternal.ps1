@@ -48,6 +48,7 @@ function Invoke-BoltInternal {
         $startInfo = New-Object System.Diagnostics.ProcessStartInfo("$env:RUBY_DIR\bin\ruby.exe", "-S -- $env:RUBY_DIR\bin\bolt $BoltCommandLine")
         $startInfo.UseShellExecute = $false
         $startInfo.CreateNoWindow = $true
+        $startInfo.WorkingDirectory = Get-Location
         $startInfo.RedirectStandardError = $true
         $startInfo.RedirectStandardOutput = $true
         $bolt_process = New-Object System.Diagnostics.Process
