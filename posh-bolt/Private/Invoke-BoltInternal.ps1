@@ -23,7 +23,7 @@ function Merge-BoltOutputModulePath {
         [object] $BoltOutput
     )
     process {
-        if ($BoltOutput.modulepath) {
+        if (($BoltOutput | Get-Member -Name "modulepath") -ne $null) {
             $BoltOutput.modulepath = $BoltOutput.modulepath -join ';'
         }
         Write-Output $BoltOutput
