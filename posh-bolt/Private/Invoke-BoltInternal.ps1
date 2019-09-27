@@ -76,15 +76,19 @@ function Invoke-BoltInternal {
         if ($bolt_process.ExitCode -eq 0){
             $result | ConvertFrom-Json | Merge-BoltOutputModulePath | Write-Output
         } else {
-            $err = ($result | ConvertFrom-Json)
-            if ($err.result_error.msg) {
-                $err = $err.result._error.msg
-            } elseif ($err._error.msg) {
-                $err = $err._error.msg
-            } elseif ($err.msg) {
-                $err = $err.msg
-            } else {
-                $err = "Bolt execution failed! re run with -Debug to see more details"
+            try {
+                $err = ($result | ConvertFrom-Json)
+                if ($err.result_error.msg) {
+                    $err = $err.result._error.msg
+                } elseif ($err._error.msg) {
+                    $err = $err._error.msg
+                } elseif ($err.msg) {
+                    $err = $err.msg
+                } else {
+                    $err = "Bolt execution failed! re run with -Debug to see more details"
+                }
+            } catch {
+                $err = $result
             }
             # Write the whole result to the error stream if DebugPreference is set
             if (($DebugPreference -eq 'Inquire') -or ($DebugPreference -eq 'Continue')) {
